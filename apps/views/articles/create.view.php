@@ -46,7 +46,7 @@
 				      <div class="row right">
 				      	<div class="input-field col s12">
 				      		<button type="submit" class="waves-effect waves-light btn " name="btn_create_article">Save</button>
-				      		<a href="articles.php" class="waves-effect waves-green btn purple">Back</a>
+				      		<a href="<?php $baseUrl; ?>index.php?page=articles&action=articles" class="waves-effect waves-green btn purple">Back</a>
 				      	</div>
 				      </div>
 				    </form>

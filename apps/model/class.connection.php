@@ -1,5 +1,5 @@
 <?php 
-	include '../apps/config/database.php';
+	include 'apps/config/database.php';
 
 	/**
 	* 

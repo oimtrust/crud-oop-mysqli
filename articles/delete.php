@@ -1,5 +1,5 @@
 <?php 
-	include_once '../apps/model/class.article.php';
+	include_once 'apps/model/class.article.php';
 
 	$article 	= new Article();
 
@@ -8,7 +8,7 @@
 		if ($article->delete($id)) {
 			
 		}
-		$article->redirect('articles.php');
+		$article->redirect($baseUrl . 'index.php?page=articles&action=articles');
 	} catch (Exception $e) {
 		echo $e->getMessage();
 	}

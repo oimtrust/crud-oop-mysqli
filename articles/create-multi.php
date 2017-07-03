@@ -1,5 +1,7 @@
 <?php
-	include_once '../apps/model/class.article.php';
+    if(!defined('RESTRICTED'))exit('No direct script access allowed!');
+
+    include_once 'apps/model/class.article.php';
 
 	$article 	= new Article();
 
@@ -41,15 +43,14 @@
 				elseif ($article->create_multi($titlem, $contentm, $authorm, $created_at, $updated_at)) {
 					
 				}
-				$article->redirect('articles.php?saved');
+				$article->redirect($baseUrl . 'index.php?page=articles&action=articles&saved');
 			} catch (Exception $e) {
 				echo $e->getMessage();
 			}
 		}
 	}
 
-	include '../apps/views/layouts/header.view.php';
-	include '../apps/views/articles/menu.view.php';
-	include '../apps/views/articles/create-multi.view.php';
-	include '../apps/views/layouts/footer.view.php';
- ?>
+	include 'apps/views/layouts/header.view.php';
+	include 'apps/views/articles/menu.view.php';
+	include 'apps/views/articles/create-multi.view.php';
+	include 'apps/views/layouts/footer.view.php';

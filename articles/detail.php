@@ -1,5 +1,5 @@
 <?php
-	include_once '../apps/model/class.connection.php';
+	include_once 'apps/model/class.connection.php';
 
 	$connect 	= new Connection();
 
@@ -11,8 +11,8 @@
 
 	$data 		= $stmt->fetch_object();
 
-	include '../apps/views/layouts/header.view.php';
-	include '../apps/views/articles/menu.view.php';
-	include '../apps/views/articles/detail.view.php';
-	include '../apps/views/layouts/footer.view.php';
+	include 'apps/views/layouts/header.view.php';
+	include 'apps/views/articles/menu.view.php';
+	include 'apps/views/articles/detail.view.php';
+	include 'apps/views/layouts/footer.view.php';
  ?>

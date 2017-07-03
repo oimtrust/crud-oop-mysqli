@@ -70,15 +70,15 @@
 								<td><?php echo $data['author']; ?></td>
 								<td><?php echo $data['created_at']; ?></td>
 								<td>
-									<a href="detail.php?detail_id=<?php echo $data['id']; ?>" title="Detail" class="btn-floating waves-effect waves-light blue lighten-3 tippy">
+									<a href="<?php $baseUrl; ?>index.php?page=articles&action=detail&detail_id=<?php echo $data['id']; ?>" title="Detail" class="btn-floating waves-effect waves-light blue lighten-3 tippy">
 										<i class="mdi mdi-eye-outline"></i>
 									</a>
 
-									<a href="edit.php?edit_id=<?php echo $data['id']; ?>" title="Edit" class="btn-floating waves-effect waves-light yellow tippy">
+									<a href="<?php $baseUrl; ?>index.php?page=articles&action=update&edit_id=<?php echo $data['id']; ?>" title="Edit" class="btn-floating waves-effect waves-light yellow tippy">
 										<i class="mdi mdi-pencil"></i>
 									</a>
 									
-									<a href="delete.php?delete_id=<?php echo $data['id']; ?>" class="btn-floating waves-effect waves-light red tippy btn-delete" title="Delete" >
+									<a href="<?php $baseUrl; ?>index.php?page=articles&action=delete&delete_id=<?php echo $data['id']; ?>" class="btn-floating waves-effect waves-light red tippy btn-delete" title="Delete" >
 								<i class="mdi mdi-delete"></i>
 							</a>
 								</td>
@@ -103,7 +103,7 @@
                      */
                     if ($pg > 1) {
                       $link   = $pg - 1;
-                      $prev   = "<a href='?pg=$link'><i class='mdi mdi-arrow-left-bold'></i></a>";
+                      $prev   = "<a href= '$baseUrl/index.php?page=articles&pg=$link'><i class='mdi mdi-arrow-left-bold'></i></a>";
                     }
                     else {
                       $prev   = "";
@@ -114,7 +114,7 @@
                        */
                       if ($pg < $amount_of_page) {
                         $link   = $pg + 1;
-                        $next   = "<a href='?pg=$link'><i class='mdi mdi-arrow-right-bold'></i></a>";
+                        $next   = "<a href= '$baseUrl/index.php?page=articles&pg=$link'><i class='mdi mdi-arrow-right-bold'></i></a>";
                       }
                       else {
                         $next   = "";
@@ -133,8 +133,8 @@
 		      <i class="large mdi mdi-plus"></i>
 		    </a>
 		    <ul>		      
-		      <li><a href="create-multi.php"  class="btn-floating green darken-1 tippy" title="Create Multiple"><i class="mdi mdi-checkbox-multiple-blank"></i></a></li>
-		      <li><a href="create.php" class="btn-floating blue tippy" title="Create"><i class="mdi mdi-border-color"></i></a></li>
+		      <li><a href="<?php $baseUrl; ?>index.php?page=articles&action=createMulti"  class="btn-floating green darken-1 tippy" title="Create Multiple"><i class="mdi mdi-checkbox-multiple-blank"></i></a></li>
+		      <li><a href="<?php $baseUrl; ?>index.php?page=articles&action=create" class="btn-floating blue tippy" title="Create"><i class="mdi mdi-border-color"></i></a></li>
 		    </ul>
 		</div>
 		<!-- End Fixed Action Button -->

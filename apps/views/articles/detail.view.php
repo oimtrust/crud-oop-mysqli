@@ -12,7 +12,7 @@
             </div>
 
             <div class="card-action">
-            	<a href="articles.php" class="btn waves-effect waves-light">Back</a>
+            	<a href="<?php $baseUrl; ?>index.php?page=articles&action=articles" class="btn waves-effect waves-light">Back</a>
             </div>
           </div>
         </div>

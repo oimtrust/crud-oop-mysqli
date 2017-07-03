@@ -1,5 +1,5 @@
 <?php 
-	include_once '../apps/model/class.article.php';
+	include_once 'apps/model/class.article.php';
 
 	$article 	= new Article();
 
@@ -14,7 +14,7 @@
 		$data 		= $stmt->fetch_object();
 	}
 	else {
-		$article->redirect('articles.php?error');
+		$article->redirect($baseUrl . 'index.php?page=articles&action=articles&error');
 	}
 
 	if (isset($_POST['btn_update_article'])) {
@@ -41,15 +41,15 @@
 				if ($article->update($title, $content, $author, $updated_at, $id)) {
 					
 				}
-				$article->redirect('articles.php?saved');
+				$article->redirect($baseUrl . 'index.php?page=articles&action=articles&saved');
 			} catch (Exception $e) {
 				echo $e->getMessage();
 			}
 		}
 	}
 
-	include '../apps/views/layouts/header.view.php';
-	include '../apps/views/articles/menu.view.php';
-	include '../apps/views/articles/edit.view.php';
-	include '../apps/views/layouts/footer.view.php';
+	include 'apps/views/layouts/header.view.php';
+	include 'apps/views/articles/menu.view.php';
+	include 'apps/views/articles/edit.view.php';
+	include 'apps/views/layouts/footer.view.php';
  ?>
